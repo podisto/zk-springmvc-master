@@ -1,6 +1,7 @@
 package demo.controller.springmvc;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,11 @@ public class LoginController {
 
 	@Autowired
 	private OrderDAO orderDao;
+	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String showLogin() {
+		return "login";
+	}
 	
 	@RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
 	public String loginForm(ModelMap model, HttpServletRequest request, HttpSession session) {

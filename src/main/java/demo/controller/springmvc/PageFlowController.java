@@ -27,13 +27,13 @@ public class PageFlowController {
 			System.out.println(session.getAttribute("logged"));
 			return "redirect:shopping/shop";
 		}
-		return "login";
+		return "redirect:/login";
 	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "redirect:index";
+		return "redirect:/login";
 	}
 	
 	@RequestMapping(value = "/shop", method = RequestMethod.GET)
@@ -42,7 +42,7 @@ public class PageFlowController {
 			model.addAttribute("productList", prodDao.findAll());
 			return "shopping";
 		}
-		return "redirect:index";
+		return "redirect:/login";
 	}
 	
 	@RequestMapping(value = "/confirm/{id}", method = RequestMethod.GET)
