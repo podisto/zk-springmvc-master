@@ -22,7 +22,11 @@ public class PageFlowController {
 	private OrderDAO orderDao;
 	
 	@RequestMapping(value = {"", "/", "index"}, method = RequestMethod.GET)
-	public String index() {
+	public String index(HttpSession session) {
+		if (isLogged(session)) {
+			System.out.println(session.getAttribute("logged"));
+			return "redirect:shopping/shop";
+		}
 		return "login";
 	}
 	
