@@ -14,19 +14,19 @@ import demo.data.bean.Order;
 import demo.data.service.OrderDAO;
 
 @Controller
-@RequestMapping("/shopping")
-public class FormController {
+public class LoginController {
 
 	@Autowired
 	private OrderDAO orderDao;
 	
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	@RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
 	public String loginForm(ModelMap model, HttpServletRequest request, HttpSession session) {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		System.out.println("username: " +username+ " | password: " +password);
 		if ("zk".equals(username) && "zk".equals(password)) {
 			session.setAttribute("logged", true);
-			return "redirect:shop";
+			return "redirect:shopping/shop";
 		}
 		return "redirect:index";
 	}

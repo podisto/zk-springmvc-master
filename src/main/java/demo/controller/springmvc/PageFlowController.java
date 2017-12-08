@@ -23,7 +23,7 @@ public class PageFlowController {
 	
 	@RequestMapping(value = {"", "/", "index"}, method = RequestMethod.GET)
 	public String index() {
-		return "zul/login.zul";
+		return "login";
 	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
@@ -36,7 +36,7 @@ public class PageFlowController {
 	public String shop(ModelMap model, HttpSession session) {
 		if (isLogged(session)) {
 			model.addAttribute("productList", prodDao.findAll());
-			return "zul/shopping.zul";
+			return "shopping";
 		}
 		return "redirect:index";
 	}

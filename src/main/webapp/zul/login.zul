@@ -1,7 +1,7 @@
 <?page title="Shopping Cart Sample - Login" ?>
 <zk xmlns:n="native">
 	<window title="Login" mode="modal" position="center,center" border="normal">
-		<n:form action="login" method="post">
+		<n:form action="loginProcess" method="post">
 		<grid hflex="min" vflex="1">
 			<rows>
 				<row>Name: <textbox name="username" /></row>

@@ -1,0 +1,7 @@
+<zk xmlns:n="native">
+	<window>
+		<hbox>
+			<n:a href="shopping">Spring MVC with ZK sample - Shopping Cart</n:a>
+		</hbox>
+	</window>
+</zk>

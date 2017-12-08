@@ -14,7 +14,7 @@
 	<context:component-scan base-package="demo.data.service" />
 	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/" />
-		<property name="suffix" value="" />
+		<property name="prefix" value="/zul/" />
+		<property name="suffix" value=".zul" />
 	</bean>
 </beans>
